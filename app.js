@@ -3,6 +3,7 @@ var app = angular.module("myApp" , []);
 app.controller("myController" , function($scope , $http , $location){
 	$scope.getRandomQuote = function(){
 		console.log("sending request")
+		$scope.formattedData = "Fetching quote..."
 
 		var url = "https://andruxnet-random-famous-quotes.p.mashape.com/";
 		var h = {
@@ -19,14 +20,7 @@ app.controller("myController" , function($scope , $http , $location){
 
 		$http(req)
 			.then(function(response){
-				console.log(response.status , response.headers , response.body);
 				$scope.formattedData = response.data.quote + " - " + response.data.author;
-				$scope.twitterUrl="https://twitter.com/intent/tweet?text="+$scope.formattedData;
-				console.log($scope.twitterUrl);
 			});
 	};
-
-	$scope.tweet = function(){
-		$location.url($scope.twitterUrl);
-	}
 });

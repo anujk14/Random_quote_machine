@@ -3,12 +3,16 @@
 		<title>Random quotes machine</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 		<script src="app.js"></script>
-		<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+		<style>
+		</style>
 	</head>
 
 	<body ng-app="myApp" ng-controller="myController">
 		<button type="submit" ng-click="getRandomQuote()">Get quote</button>
 		<p>{{formattedData}}</p>
-		<a class="twitter-share-button" ng-click="tweet">Tweet</a>
+		<a target="_blank" ng-href="https://twitter.com/intent/tweet?text={{formattedData}}&hashtags=randomQuote">
+			<img src='https://twitter.com/favicons/favicon.ico' ></img>
+		</a>
 	</body>
 </html>
