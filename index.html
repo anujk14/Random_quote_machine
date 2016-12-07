@@ -5,14 +5,58 @@
 		<script src="app.js"></script>
 
 		<style>
+			h2{
+				text-align: center;
+				align-self: center;
+			}
+
+			.mainDiv{
+				position:absolute;
+				border: 1px solid black;
+				height: auto;
+				left: 25%;
+				right: 25%;
+				width: 50%;
+				top:25%;
+				align-content: center;
+			}
+
+			textarea{
+				width: 100%;
+				position: relative;
+				font-weight: bold;
+				font-family: Times New Roman;
+				font-size: 25px;
+			}
+
+			.btnDiv{
+				position:relative;
+				text-align: center;
+			}
+
+			button{
+				background-color: #0084b4;
+				color: white;
+				font-family: Times New Roman;
+				margin-left: 5px;
+			}
+
+			a{
+				margin-right: 5px
+			}
 		</style>
 	</head>
 
-	<body ng-app="myApp" ng-controller="myController">
-		<button type="submit" ng-click="getRandomQuote()">Get quote</button>
-		<p>{{formattedData}}</p>
-		<a target="_blank" ng-href="https://twitter.com/intent/tweet?text={{formattedData}}&hashtags=randomQuote">
-			<img src='https://twitter.com/favicons/favicon.ico' ></img>
-		</a>
+	<body ng-app="myApp">
+		<h2>Generate random movie quotes and tweet them!</h2>
+		<div class="mainDiv" ng-controller="myController">
+			<textarea rows="5" cols="25">{{formattedData}}</textarea>
+			<div class="btnDiv">
+				<a target="_blank" ng-href="https://twitter.com/intent/tweet?text={{formattedData}}&hashtags=randomQuote">
+					<img src='https://twitter.com/favicons/favicon.ico' ></img>
+				</a>
+				<button type="submit" ng-click="getRandomQuote()">Get quote</button>
+			</div>
+		</div>
 	</body>
 </html>
