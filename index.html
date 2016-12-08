@@ -1,18 +1,18 @@
 <html>
 	<head>
 		<title>Random quotes machine</title>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script src="app.js"></script>
 
-		<style>
-			h2{
-				text-align: center;
-				align-self: center;
-			}
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
+		<style>
 			.mainDiv{
 				position:absolute;
-				border: 1px solid black;
 				height: auto;
 				left: 25%;
 				right: 25%;
@@ -21,41 +21,28 @@
 				align-content: center;
 			}
 
-			textarea{
-				width: 100%;
-				position: relative;
-				font-weight: bold;
-				font-family: Times New Roman;
-				font-size: 25px;
-			}
 
 			.btnDiv{
 				position:relative;
 				text-align: center;
 			}
 
-			button{
-				background-color: #0084b4;
-				color: white;
-				font-family: Times New Roman;
-				margin-left: 5px;
+			.row *{
+				margin: 2px 10px;
 			}
 
-			a{
-				margin-right: 5px
-			}
 		</style>
 	</head>
 
-	<body ng-app="myApp">
-		<h2>Generate random movie quotes and tweet them!</h2>
+	<body ng-app="myApp" class="container">
+		<h2 class="text-center">Generate random movie quotes and tweet them!</h2>
 		<div class="mainDiv" ng-controller="myController">
-			<textarea rows="5" cols="25">{{formattedData}}</textarea>
-			<div class="btnDiv">
+			<textarea class="form-control" rows="9">{{formattedData}}</textarea>
+			<div class="text-center row">
 				<a target="_blank" ng-href="https://twitter.com/intent/tweet?text={{formattedData}}&hashtags=randomQuote">
 					<img src='https://twitter.com/favicons/favicon.ico' ></img>
 				</a>
-				<button type="submit" ng-click="getRandomQuote()">Get quote</button>
+				<button class="btn btn-success" type="submit" ng-click="getRandomQuote()">Get quote</button>
 			</div>
 		</div>
 	</body>
