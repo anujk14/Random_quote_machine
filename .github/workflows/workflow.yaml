@@ -1,0 +1,11 @@
+name: MyWorkflow
+on:
+  release:
+    types:
+      - created
+jobs:
+  sample_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo release details
+      - run: echo "Name - ${{ github.event.release.name }} Details - ${{ github.event.release.body }}"
