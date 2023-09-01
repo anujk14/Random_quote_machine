@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo release details
-      - run: echo "Name - ${{ github.event.release.name }} Details - ${{ github.event.release.body }}"
+        run: echo "Name - ${{ github.event.release.name }} Details - ${{ github.event.release.body }}"
